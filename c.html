@@ -1,0 +1,58 @@
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>计算器</title>
+    <body>
+    <div>
+     <img src="图片/b.jpg"style="position:absolute;top:1px;left:1px;width:980px;height:75px;">
+     <a href="index.html"style="position:absolute;top:5px;lef:1px;width:180px;height:70px;font-size:60px;color:red;">首页</a>
+     <a href="2.html"style="position:absolute;top:5px;left:140px;width:180px;height:70px;font-size:60px;color:red;">应用</a>
+     <a href="c.html"style="position:absolute;top:5px;left:280px;width:180px;height:70px;font-size:60px;color:red;">计算器</a>
+     <a href="游戏.html"style="position:absolute;top:5px;left:480px;width:180px;height:70px;font-size:60px;color:red;">游戏</a>
+    </div>
+   <div class="calculator">
+      <input type="text" id="display" readonly style="position:absolute;top:100px;left:120px;width:760px;height:120px;font-size:60px;color:red">
+       <button style="position:absolute;top:1200px;left:120px;width:240px;height:120px;font-size:60px;color:red"onclick="clearDisplay()">AC</button>
+      <button style="position:absolute;top:750px;left:120px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('1')">1</button>
+      <button style="position:absolute;top:750px;left:380px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('2')">2</button>
+      <button style="position:absolute;top:750px;left:640px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('3')">3</button>
+      <button style="position:absolute;top:900px;left:120px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('4')">4</button>
+      <button style="position:absolute;top:900px;left:380px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('5')">5</button>
+      <button style="position:absolute;top:900px;left:640px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('6')">6</button>
+      <button style="position:absolute;top:1050px;left:120px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('7')">7</button>
+      <button style="position:absolute;top:1050px;left:380px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('8')">8</button>
+      <button style="position:absolute;top:1050px;left:640px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('9')">9</button>
+      <button style="position:absolute;top:1200px;left:380px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('0')">0</button>
+      <button style="position:absolute;top:1200px;left:640px;width:240px;height:120px;font-size:60px;color:red;"onclick="calculate()">=</button>
+      <button style="position:absolute;top:1350px;left:200px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('+')">+</button>
+      <button style="position:absolute;top:1350px;left:520px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('-')">-</button>
+      <button style="position:absolute;top:1500px;left:200px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('*')">×</button>
+      <button style="position:absolute;top:1500px;left:520px;width:240px;height:120px;font-size:60px;color:red;"onclick="inputValue('/')">÷</button>
+      
+
+
+    </div>
+<script>
+    var display = document.getElementById('display');
+
+    function inputValue(value) {
+        display.value += value;
+    }
+
+    function clearDisplay() {
+        display.value = '';
+    }
+
+    function calculate() {
+        try {
+            display.value = eval(display.value);
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+</script>
+
+
+
+    </body>
+
+</html>

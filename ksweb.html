@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ksweb详页</title>
+</head>
+<body>
+<img src="图片/1.jpg"style="position:absolute;top:100px;left:396px;width:200px;height:200px;">
+<p style="position:absolute;top:240px;left:392px;font-size:60px;color:black;">KSWEB</p>
+<a href="apk/KSWEB.apk"downkoad>
+<button style="position:absolute;top:380px;left:380px;width:240px;height:120px;font-size:60px;color:red;">下载</button>
+</a>
+<p style="position:absolute;top:520px;left:1px;font-size:30px;color:black;">介绍:手机建服务器的APP</p>
+<style>
+  .slider {
+      top: 750px;
+      left: 1;
+      width: 100%; /* 容器宽度 */
+      height: 1; /* 容器高度 */
+      overflow: hidden; /* 隐藏超出容器的图片 */
+      position: relative; /* 相对定位 */
+      white-space: nowrap; /* 防止图片换行 */
+      cursor: grab; /* 鼠标悬停时显示抓取图标 */
+      -webkit-user-select: none; /* 禁止用户选择文本 */
+      -khtml-user-select: none; /* 禁止用户选择文本 */
+      -moz-user-select: none; /* 禁止用户选择文本 */
+      -ms-user-select: none; /* 禁止用户选择文本 */
+      user-select: none; /* 禁止用户选择文本 */
+    }
+
+  .slide {
+      display: inline-block; /* 使图片水平排列 */
+      width: 100%; /* 单个图片宽度 */
+      height: 100%; /* 单个图片高度 */
+      margin-right: 0; /* 图片间隔 */
+      transition: transform 0.3s ease; /* 平滑过渡效果 */
+    }
+
+  .slide img {
+      width: 100%; /* 图片宽度占满容器 */
+      height: 100%; /* 图片高度自适应 */
+    }
+</style>
+</head>
+<body>
+
+<div class="slider" id="slider"style="position:absolute;width:700px;height:1000px;left:150px;">
+    <div class="slide"><img src="ksweb/1.jpg" alt="Image 1"></div>
+    <div class="slide"><img src="ksweb/2.jpg" alt="Image 2"></div>
+    <div class="slide"><img src="ksweb/3.jpg" alt="Image 3"></div>
+    <!-- 更多图片 -->
+</div>
+
+<script>
+    const slider = document.getElementById('slider');
+    let startX, scrollLeft;
+
+    slider.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('touchmove', function(e) {
+      e.preventDefault(); // 阻止默认的滚动行为
+      const x = e.touches[0].clientX;
+      const walk = x - startX;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    slider.addEventListener('touchend', function() {
+      // 可以在这里添加代码，以决定是否需要自动滑动到下一张图片
+    });
+</script>
+<a href="2.html">
+    <button style="position:absolute;top:1px;left:1px;width:120px;height:60px;font-size:30px;color:red;">返回</button>
+</a>
+</body>
+</html>
+</body>
+</html>

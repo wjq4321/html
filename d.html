@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单数据库</title>
+</head>
+<body>
+    <h1>我的数据库</h1>
+    <h2>联系人列表</h2>
+    <ul id="contactList"></ul>
+
+    <script>
+        // 使用fetch API从JSON文件读取数据
+        fetch('database.json')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('contactList');
+                data.forEach(contact => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `姓名: ${contact.name}, 电话: ${contact.phone}, 邮箱: ${contact.email}`;
+                    list.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
